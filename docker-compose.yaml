@@ -1,0 +1,8 @@
+services:
+  serge-pubsite:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: Serge-Pubsite
+    ports:
+      - "8080:8080"
