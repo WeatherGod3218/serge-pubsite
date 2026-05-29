@@ -12,7 +12,9 @@ FROM nginxinc/nginx-unprivileged:stable-alpine
 USER 0
 RUN rm -rf /usr/share/nginx/html/*
 COPY --from=builder --chown=101:0 /src/public /usr/share/nginx/html
-RUN chmod -R g+rwX /var/cache/nginx /var/log/nginx
+
+RUN chmod -R 755 /usr/share/nginx/html
+
 USER 101
 
 EXPOSE 8080
