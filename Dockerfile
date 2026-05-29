@@ -9,7 +9,9 @@ RUN hugo --cacheDir /tmp/hugo-cache
 
 FROM nginxinc/nginx-unprivileged:stable-alpine
 
-COPY --from=builder /src/public /usr/share/nginx/html
+WORKDIR /usr/share/nginx/html
+COPY --from=builder /src/public .
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 8080
 
