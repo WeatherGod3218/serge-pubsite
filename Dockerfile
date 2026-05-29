@@ -5,7 +5,7 @@ WORKDIR /src
 COPY --chown=1000:1000 . .
 USER 1000
 
-RUN ls -la && ls -la content/ && ls -la themes/ && hugo --cacheDir /tmp/hugo-cache --verbose
+RUN ls -la && ls -la content/ && ls -la themes/ && hugo --cacheDir /tmp/hugo-cache
 
 FROM nginxinc/nginx-unprivileged:stable-alpine
 
