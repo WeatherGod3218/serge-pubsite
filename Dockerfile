@@ -9,7 +9,11 @@ RUN hugo --cacheDir /tmp/hugo-cache
 
 FROM nginxinc/nginx-unprivileged:stable-alpine
 
-COPY --from=builder /src/public /usr/share/nginx/html
+USER 0
+RUN rm -rf /usr/share/nginx/html/*
+COPY --from=builder --chown=101:0 /src/public /usr/share/nginx/html
+RUN chmod -R g+rwX /var/cache/nginx /var/log/nginx
+USER 101
 
 EXPOSE 8080
 
