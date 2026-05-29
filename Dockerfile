@@ -11,9 +11,10 @@ FROM nginxinc/nginx-unprivileged:stable-alpine
 
 USER 0
 RUN rm -rf /usr/share/nginx/html/*
-COPY --from=builder --chown=101:0 /src/public /usr/share/nginx/html
+COPY --from=builder --chown=101:101 /src/public /usr/share/nginx/html
 
-RUN chmod -R 755 /usr/share/nginx/html
+RUN find /usr/share/nginx/html -type d -exec chmod 755 {} \; && \
+    find /usr/share/nginx/html -type f -exec chmod 644 {} \;
 
 USER 101
 
