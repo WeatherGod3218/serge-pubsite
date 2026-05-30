@@ -11,23 +11,38 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
- name = "Home"
- pageRef = "/"
- weight = 10
+    name = "Home"
+    pageRef = "/"
+    weight = 10
 
 [[main]]
- name = "About"
- weight = 20
+    name = "About"
+    weight = 20
 
 [[main]]
- name = "Contact"
- weight = 30
+    name = "SERGE"
+    parent = "About"
+    pageRef = "about/serge"
+    weight = 10
 
-#[[main]]
-#  name = "example sub-menu 1"
-#  parent = "Parent"
-#  pageRef = "posts"
-#  weight = 20
+[[main]]
+    name = "Our Team"
+    parent = "About"
+    pageRef = "about/team"
+    weight = 20
+
+[[main]]
+    name = "Probes"
+    weight = 30
+
+[[main]]
+    name = "Wisconsin Mobile Storm Probe"
+    parent = "Probes"
+    pageRef = "probes/wmsp"
+    weight = 20
+
+
+
 
 #[[main]]
 #  name = "example sub-menu 2"
