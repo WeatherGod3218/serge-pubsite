@@ -1,0 +1,17 @@
+<div class="flex flex-col md:flex-row gap-4 items-start">
+    {{ $img := resources.Get (.Get "image") }}
+    {{ $resized := $img.Resize "300x" }}
+
+    <img src="{{ $resized.RelPermalink }}" class="w-48 rounded-lg object-cover" />
+
+  <div class="flex-1">
+    <h2 class="text-2xl font-bold">{{ .Get "name" }}</h2>
+    {{ $titles := .Get "titles" }}
+
+    {{range (split $titles ",")}}
+      <h3 class="text-xl"><i>{{ . }}</i></h3>
+    {{end}}
+
+    <p class="mt-2">{{ .Inner }}</p>
+  </div>
+</div>
