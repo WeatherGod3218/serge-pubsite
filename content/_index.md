@@ -5,8 +5,6 @@ title = 'SERGE'
 description = "Public Site for the SERGE Storm Chasing Team"
 +++
 
-{{< alert icon="xmark" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
-**WARNING!!** SERGE is a team of trained professionals, do not attempt to reenact on your own.
-{{< /alert >}}
+Welcome to SERGE! SERGE is a storm chasing team collecting severe weather data in order to better predict storm systems! Check out more b
 
-Testing something
+{{< article link="/about/serge/" showSummary=true compactSummary=true >}}

@@ -4,6 +4,7 @@ date: 2022-03-08
 layout: "full-width"
 showHero: true
 heroStyle: "background"
+summary: "Public Site for the SERGE Storm Chasing Team"
 ---
 
 Meet each member of the SERGE Storm Chasing Team! Below is everyone on the team, along with their titles and what they have done!
